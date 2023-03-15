@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2D6F984C-EA74-4CCC-9596-CCCEA5317B70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPS.AddressApi", "src\USPS.AddressApi\USPS.AddressApi.csproj", "{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{14512F93-2479-4989-A0C1-FC42C2CD6A2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPS.AddressApi.Tests", "test\USPS.AddressApi.Tests\USPS.AddressApi.Tests.csproj", "{AF3D670E-CABA-49C7-905A-D0BA2450626D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3D670E-CABA-49C7-905A-D0BA2450626D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3D670E-CABA-49C7-905A-D0BA2450626D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3D670E-CABA-49C7-905A-D0BA2450626D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3D670E-CABA-49C7-905A-D0BA2450626D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEEF7DD7-6963-4C78-9B4E-27A3C8FFC0F0} = {2D6F984C-EA74-4CCC-9596-CCCEA5317B70}
+		{AF3D670E-CABA-49C7-905A-D0BA2450626D} = {14512F93-2479-4989-A0C1-FC42C2CD6A2F}
+	EndGlobalSection
+EndGlobal
