@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+    <Number>12345678</Number>
+    <Description>TOP LEVEL ERROR TEST</Description>
+    <Source>USPSCOM::DoAuth</Source>
+</Error>

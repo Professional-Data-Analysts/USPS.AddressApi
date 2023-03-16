@@ -6,6 +6,11 @@ namespace USPS.AddressApi.Configuration
     public class AddressApiClientOptions
     {
         /// <summary>
+        /// The name of the configuration section.
+        /// </summary>
+        public const string CONFIGURATION_SECTION_NAME = "USPS.AddressApi";
+
+        /// <summary>
         /// The default base uri for the USPS Address Information Api service.
         /// </summar>
         public const string DEFAULT_API_BASE_URI = "https://secure.shippingapis.com/ShippingAPI.dll";

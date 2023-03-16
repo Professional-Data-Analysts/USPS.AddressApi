@@ -21,5 +21,7 @@ namespace USPS.AddressApi
         internal const string REVISION_ELEMENT_NAME = "Revision";
         internal const string ADDRESS_VALIDATE_REQUEST_ELEMENT_NAME = "AddressValidateRequest";
         internal const string ADDRESS_VALIDATE_OPERATION_NAME = "Verify";
+        internal const string XML_QUERY_PARAM_NAME = "XML";
+        internal const string API_QUERY_PARAM_NAME = "API";
     }
 }

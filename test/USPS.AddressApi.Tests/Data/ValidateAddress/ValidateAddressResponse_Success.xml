@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressValidateResponse>
+    <Address ID="0">
+        <Address1> STE K</Address1>
+        <Address2>29851 AVENTURA</Address2>
+        <City>RANCHO SANTA MARGARITA</City>
+        <CityAbbreviation>RCHO STA MARG</CityAbbreviation>
+        <State>CA</State>
+        <Zip5>92688</Zip5>
+        <Zip4>2014</Zip4>
+        <DeliveryPoint>83</DeliveryPoint>
+        <CarrierRoute>C057</CarrierRoute>
+        <Footnotes>N</Footnotes>
+        <DPVConfirmation>Y</DPVConfirmation>
+        <DPVCMRA>N</DPVCMRA>
+        <DPVFootnotes>AABB</DPVFootnotes>
+        <Business>Y</Business>
+        <CentralDeliveryPoint>N</CentralDeliveryPoint>
+        <Vacant>N</Vacant>
+    </Address>
+</AddressValidateResponse>

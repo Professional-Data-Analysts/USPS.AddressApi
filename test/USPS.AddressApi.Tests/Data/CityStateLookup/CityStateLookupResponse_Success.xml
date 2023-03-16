@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CityStateLookupResponse>
+    <ZipCode ID="0">
+        <City>TEST CITY</City>
+        <State>MN</State>
+        <Zip5>06371</Zip5>
+    </ZipCode>
+</CityStateLookupResponse>

@@ -1,0 +1,29 @@
+<ZipCodeLookupRequest>
+  <Address ID="0">
+    <FirmName />
+    <Address1>3</Address1>
+    <Address2 />
+    <City />
+    <State />
+    <Zip5 />
+    <Zip4 />
+  </Address>
+  <Address ID="1">
+    <FirmName />
+    <Address1>2</Address1>
+    <Address2 />
+    <City />
+    <State />
+    <Zip5 />
+    <Zip4 />
+  </Address>
+  <Address ID="2">
+    <FirmName />
+    <Address1>1</Address1>
+    <Address2 />
+    <City />
+    <State />
+    <Zip5 />
+    <Zip4 />
+  </Address>
+</ZipCodeLookupRequest>

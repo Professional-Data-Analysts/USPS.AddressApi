@@ -1,0 +1,1 @@
+<AddressValidateRequest USERID="TESTUSER123"><Revision>1</Revision><Address ID="0"><FirmName /><Address1>TEST_ADDRESS1</Address1><Address2>TEST_ADDRESS2</Address2><City>TEST_CITY</City><State>MN</State><Urbanization>TEST_URBANIZATION</Urbanization><Zip5>TEST_ZIP5</Zip5><Zip4>TEST_ZIP4</Zip4></Address></AddressValidateRequest>

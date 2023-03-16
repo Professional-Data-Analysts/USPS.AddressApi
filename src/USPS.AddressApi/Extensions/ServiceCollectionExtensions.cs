@@ -44,7 +44,7 @@ namespace USPS.AddressApi.Extensions
                 throw new ArgumentNullException(nameof(configuration));
             }
 
-            services.Configure<AddressApiClientOptions>(configuration.GetSection(nameof(USPS.AddressApi)));
+            services.Configure<AddressApiClientOptions>(configuration.GetSection(AddressApiClientOptions.CONFIGURATION_SECTION_NAME));
             services.AddSingleton<IAddressApiClient, AddressApiClient>((provider) =>
             {
                 var options = provider.GetRequiredService<IOptionsMonitor<AddressApiClientOptions>>();

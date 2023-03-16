@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressValidateResponse>
+    <Address ID="1">
+        <Address1>4</Address1>
+    </Address>
+    <Address ID="2">
+        <Address1>1</Address1>
+    </Address>
+    <Address ID="3">
+        <Address1>2</Address1>
+    </Address>
+    <Address ID="0">
+        <Address1>3</Address1>
+    </Address>
+</AddressValidateResponse>

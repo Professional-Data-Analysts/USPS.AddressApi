@@ -1,0 +1,5 @@
+<CityStateLookupRequest>
+  <ZipCode ID="0">
+    <Zip5>Valid</Zip5>
+  </ZipCode>
+</CityStateLookupRequest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZipCodeLookupResponse>
+    <Address ID="0">
+        <FirmName>XXXY COMP</FirmName>
+        <Address1>TEST ADDRESS1</Address1>
+        <Address2>8 WILDWOOD DR</Address2>
+        <City>OLD LYME</City>
+        <State>CT</State>
+        <Urbanization>YES</Urbanization>
+        <Zip5>06371</Zip5>
+        <Zip4>1844</Zip4>
+    </Address>
+</ZipCodeLookupResponse>

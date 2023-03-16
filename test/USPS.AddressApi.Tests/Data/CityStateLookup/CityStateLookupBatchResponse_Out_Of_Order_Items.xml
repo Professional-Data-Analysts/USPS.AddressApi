@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CityStateLookupResponse>
+    <ZipCode ID="3">
+        <Zip5>2</Zip5>
+    </ZipCode>
+    <ZipCode ID="1">
+        <Zip5>4</Zip5>
+    </ZipCode>
+    <ZipCode ID="0">
+        <Zip5>3</Zip5>
+    </ZipCode>
+    <ZipCode ID="2">
+        <Zip5>1</Zip5>
+    </ZipCode>
+</CityStateLookupResponse>

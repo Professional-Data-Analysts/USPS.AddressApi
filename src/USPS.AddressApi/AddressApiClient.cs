@@ -64,7 +64,7 @@ namespace USPS.AddressApi
         /// <summary>
         /// Returns the ZIP Code and ZIP Code + 4 corresponding to the given address, city, and state (use USPS state abbreviations).
         /// </summary>
-        /// <param name="addresses">The list of addresses to lookup. Minimum of 1, maximum of 5 per request. Null values are not allowed.</param>
+        /// <param name="addresses">The list of addresses to lookup. Minimum of 1, maximum of 5. Null values are not allowed.</param>
         public async Task<ZipCodeLookupResponse> LookupZipCodeAsync(params Address[] addresses)
         {
             if(addresses.Any(x => x == null))
@@ -84,14 +84,9 @@ namespace USPS.AddressApi
 
             var element = new XElement(Constants.ZIPCODE_LOOKUP_REQUEST_ELEMENT_NAME);
 
-            var i = 0;
-            foreach(var address in addresses)
+            for (int i = 0; i < addresses.Length; i++)
             {
-                if(address != null)
-                {
-                    element.Add(address.ToXElement(Array.IndexOf(addresses, address)));
-                }
-
+                element.Add(addresses[i].ToXElement(i));
                 i++;
             }
 
@@ -107,33 +102,28 @@ namespace USPS.AddressApi
         /// <summary>
         /// Returns the city and state corresponding to the given ZIP Code.
         /// </summary>
-        /// <param name="zipCodes">The list zip codes to lookup. Minimum of 1, maximum of 5 per request. Null values are not allowed.</param>
+        /// <param name="zipCodes">The list of zip codes to lookup. Minimum of 1, maximum of 5. Null values are not allowed.</param>
         public async Task<CityStateLookupResponse> LookupCityStateAsync(params ZipCode[] zipCodes)
         {
             if(zipCodes.Any(x => x == null))
             {
-                throw new ArgumentNullException(nameof(zipCodes), "Zipcode cannot be null.");
+                throw new ArgumentNullException(nameof(zipCodes), "Zip code cannot be null.");
             }
             if(zipCodes.Length == 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(zipCodes), "You must supply at least one zipcode.");
+                throw new ArgumentOutOfRangeException(nameof(zipCodes), "You must supply at least one zip code.");
             }
 
             if(zipCodes.Length > 5)
             {
-                throw new ArgumentOutOfRangeException(nameof(zipCodes), "You can only lookup five zipcodes at a time.");
+                throw new ArgumentOutOfRangeException(nameof(zipCodes), "You can only lookup five zip codes at a time.");
             }
 
             var element = new XElement(Constants.CITY_STATE_LOOKUP_REQUEST_ELEMENT_NAME);
 
-            var i = 0;
-            foreach(var zipCode in zipCodes)
+            for (int i = 0; i < zipCodes.Length; i++)
             {
-                if(zipCode != null)
-                {
-                    element.Add(zipCode.ToXElement(Array.IndexOf(zipCodes, zipCode)));
-                }
-
+                element.Add(zipCodes[i].ToXElement(i));
                 i++;
             }
 
@@ -149,7 +139,7 @@ namespace USPS.AddressApi
         /// <summary>
         /// Corrects errors in street addresses, including abbreviations and missing information, and supplies ZIP Codes and ZIP Codes + 4.
         /// </summary>
-        /// <param name="addresses">The list addresses to verify. Minimum of 1, maximum of 5 per request. Null values are not allowed.</param>
+        /// <param name="addresses">The list of addresses to verify. Minimum of 1, maximum of 5. Null values are not allowed.</param>
         public async Task<ValidateAddressResponse> ValidateAddressAsync(params Address[] addresses)
         {
             if(addresses.Any(x => x == null))
@@ -170,14 +160,9 @@ namespace USPS.AddressApi
             var element = new XElement(Constants.ADDRESS_VALIDATE_REQUEST_ELEMENT_NAME);
             element.Add(new XElement(Constants.REVISION_ELEMENT_NAME, 1));
 
-            var i = 0;
-            foreach(var address in addresses)
+            for (int i = 0; i < addresses.Length; i++)
             {
-                if(address != null)
-                {
-                    element.Add(address.ToXElement(Array.IndexOf(addresses, address)));
-                }
-
+                element.Add(addresses[i].ToXElement(i));
                 i++;
             }
 
@@ -206,18 +191,27 @@ namespace USPS.AddressApi
             var uriBuilder = new UriBuilder(baseApiUri);
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
 
-            query["API"] = action;
-            query["XML"] = requestDoc.ToString(SaveOptions.DisableFormatting);
+            query[Constants.API_QUERY_PARAM_NAME] = action;
+            query[Constants.XML_QUERY_PARAM_NAME] = requestDoc.ToString(SaveOptions.DisableFormatting);
             uriBuilder.Query = query.ToString();
 
-            _logger.LogDebug("Praparing to execute the following request against the USPS Address API: {0}", uriBuilder.ToString());
+            _logger.LogDebug("Preparing to execute the following request against the USPS Address API: {0}", uriBuilder.ToString());
 
-            var response = await client.GetAsync(uriBuilder.Query);
-            var stringResponse = await response.Content.ReadAsStringAsync();
+            try
+            {
+                var response = await client.GetAsync(uriBuilder.Query);
+                var stringResponse = await response.Content.ReadAsStringAsync();
 
-            _logger.LogDebug("Response from the USPS Address API recieved. Status code: {0}, Response: {1}", response.StatusCode, stringResponse);
+                _logger.LogDebug("Response from the USPS Address API received. Status code: {0}, Response: {1}", response.StatusCode, stringResponse);
 
-            return XDocument.Parse(stringResponse);
+                return XDocument.Parse(stringResponse);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while trying to execute the following request against the USPS Address API: {0}", uriBuilder.ToString());
+                throw;
+            }
+            
         }
     }
 }
