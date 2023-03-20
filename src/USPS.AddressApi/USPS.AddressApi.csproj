@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0-preview</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>USPS.AddressApi</PackageId>
+    <PackageDescription>A simple, easy to use .NET Standard library for interacting with the USPS Address Information Api</PackageDescription>
+    <Copyright>(c) Professional Data Analysts</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>address_api.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Professional-Data-Analysts/USPS.AddressApi</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <ProjectUrl>https://github.com/Professional-Data-Analysts/USPS.AddressApi</ProjectUrl>
+    <Authors>Professional Data Analysts</Authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>USPS,Address Information Api</PackageTags> 
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +33,11 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+     <None Include="Assets\address_api.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
