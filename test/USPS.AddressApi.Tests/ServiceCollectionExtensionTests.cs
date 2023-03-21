@@ -103,7 +103,7 @@ namespace USPS.AddressApi.Tests
             var builder = new ConfigurationBuilder();
             var dict = new Dictionary<string, string?>()
             {
-                {"AddressDex:UserId", "TESTUSER123"}
+                {$"{AddressApiClientOptions.CONFIGURATION_SECTION_NAME}:UserId", "TESTUSER123"}
             };
             builder.AddInMemoryCollection(dict);
             var config = builder.Build();
