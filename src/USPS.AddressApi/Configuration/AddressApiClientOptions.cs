@@ -12,7 +12,7 @@ namespace USPS.AddressApi.Configuration
 
         /// <summary>
         /// The default base uri for the USPS Address Information Api service.
-        /// </summar>
+        /// </summary>
         public const string DEFAULT_API_BASE_URI = "https://secure.shippingapis.com/ShippingAPI.dll";
 
         /// <summary>

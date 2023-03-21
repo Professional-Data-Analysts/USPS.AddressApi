@@ -17,13 +17,13 @@ namespace USPS.AddressApi
         /// <summary>
         /// Returns the zipcode and zip + 4 code for a given address.
         /// </summary>
-        /// <param name="request">The address to lookup (up to 5)</param>
+        /// <param name="addresses">The addresses to lookup (up to 5)</param>
         Task<ZipCodeLookupResponse> LookupZipCodeAsync(params Address[] addresses);
 
         /// <summary>
         /// Returns the city and state for a given zipcode.
         /// </summary>
-        /// <param name="request">The city and state to lookup (up to 5)</param>
+        /// <param name="zipCodes">The city and state to lookup (up to 5)</param>
         Task<CityStateLookupResponse> LookupCityStateAsync(params ZipCode[] zipCodes);
     }
 }

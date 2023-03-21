@@ -7,16 +7,19 @@ using USPS.AddressApi.Configuration;
 
 namespace USPS.AddressApi.Extensions
 {
+    /// <summary>
+    /// Extension methods for setting up an <see cref="IServiceCollection"/>
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Registers a singleton instance of <see cref="IAddressApiClient"> with the DI container.
+        /// Registers a singleton instance of <see cref="IAddressApiClient"/> with the DI container.
         /// </summary>
-        /// <param name="services">The <see cref="IServiceCollection"> to register against.</param>
+        /// <param name="services">The <see cref="IServiceCollection"/> to register against.</param>
         /// <param name="configure">The supplied configuration</param>
         public static IServiceCollection AddAddressApiClient(this IServiceCollection services, Action<AddressApiClientOptions> configure)
         {
-            if(configure is null)
+            if (configure is null)
             {
                 throw new ArgumentNullException(nameof(configure));
             }
@@ -33,13 +36,13 @@ namespace USPS.AddressApi.Extensions
         }
 
         /// <summary>
-        /// Registers a singleton instance of <see cref="IAddressApiClient"> with the DI container.
+        /// Registers a singleton instance of <see cref="IAddressApiClient"/> with the DI container.
         /// </summary>
-        /// <param name="services">The <see cref="IServiceCollection"> to register against.</param>
-        /// <param name="configuration">the <see cref="IConfiguration"> in which to pull configuration data from</param>
+        /// <param name="services">The <see cref="IServiceCollection"/> to register against.</param>
+        /// <param name="configuration">the <see cref="IConfiguration"/> in which to pull configuration data from</param>
         public static IServiceCollection AddAddressApiClient(this IServiceCollection services, IConfiguration configuration)
         {
-            if(configuration is null)
+            if (configuration is null)
             {
                 throw new ArgumentNullException(nameof(configuration));
             }

@@ -211,7 +211,6 @@ namespace USPS.AddressApi
                 _logger.LogError(ex, "Error while trying to execute the following request against the USPS Address API: {0}", uriBuilder.ToString());
                 throw;
             }
-            
         }
     }
 }
