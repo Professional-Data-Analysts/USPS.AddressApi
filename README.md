@@ -23,11 +23,11 @@ The easiest way to get started is to simply add the nuget package to your projec
 
 ## Usage
 
-There are two main ways to use this library. The first is the simplest and perhaps the most straight forward. You need only new up an instance of `AddressInformationApiClient`. Example:
+There are two main ways to use this library. The first is the simplest and perhaps the most straight forward. You need only new up an instance of `AddressApiClient`. Example:
 
 ```csharp
 // Setup userid, etc.
-var opts = new AddressInformationApiClientOptions() 
+var opts = new AddressApiClientOptions() 
 { 
     UserId = "REPLACE_WITH_YOUR_UNIQUE_ACCOUNT_ID" 
 };
@@ -63,7 +63,7 @@ As mentioned earlier, each method supports querying of up to 5 items per request
 
 ```csharp
 // Setup userid, etc.
-var opts = new AddressInformationApiClientOptions() 
+var opts = new AddressApiClientOptions() 
 { 
     UserId = "REPLACE_WITH_YOUR_UNIQUE_ACCOUNT_ID" 
 };
