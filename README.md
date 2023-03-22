@@ -1,4 +1,7 @@
 # USPS.AddressApi
+
+[![build](https://github.com/Professional-Data-Analysts/USPS.AddressApi/actions/workflows/ci.yml/badge.svg)](https://github.com/Professional-Data-Analysts/USPS.AddressApi/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/Professional-Data-Analysts/USPS.AddressApi/badge.svg?branch=main)](https://coveralls.io/github/Professional-Data-Analysts/USPS.AddressApi?branch=main)
+
 A simple, easy to use .NET Standard library for interacting with the USPS Address Information Api
 
 ## Summary
