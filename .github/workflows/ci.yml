@@ -1,4 +1,4 @@
-name: Build
+name: build
 on:
   push:
     branches:
@@ -14,4 +14,12 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test --configuration Release test/USPS.AddressApi.Tests/USPS.AddressApi.Tests.csproj
+        /p:CollectCoverage=true
+        /p:CoverletOutput=TestResults/
+        /p:coverletOutputFormat=lcov
+    - name: Publish coverage report to coveralls.io   
+      uses: coverallsapp/github-action@master   
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }} 
+        path-to-lcov: test/USPS.AddressApi.Tests/TestResults/coverage.info 
