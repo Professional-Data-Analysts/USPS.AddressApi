@@ -17,6 +17,6 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --output .
     - name: Push
-      un: dotnet nuget push USPS.AddressApi.${VERSION}.nupkg -k ${NUGET_TOKEN} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push USPS.AddressApi.${VERSION}.nupkg -k ${NUGET_TOKEN} -s https://api.nuget.org/v3/index.json
       env:
         NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
