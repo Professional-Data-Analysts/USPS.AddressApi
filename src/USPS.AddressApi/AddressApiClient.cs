@@ -87,7 +87,6 @@ namespace USPS.AddressApi
             for (int i = 0; i < addresses.Length; i++)
             {
                 element.Add(addresses[i].ToXElement(i));
-                i++;
             }
 
             var requestDoc = new XDocument(element);
@@ -124,7 +123,6 @@ namespace USPS.AddressApi
             for (int i = 0; i < zipCodes.Length; i++)
             {
                 element.Add(zipCodes[i].ToXElement(i));
-                i++;
             }
 
             var requestDoc = new XDocument(element);
@@ -163,7 +161,6 @@ namespace USPS.AddressApi
             for (int i = 0; i < addresses.Length; i++)
             {
                 element.Add(addresses[i].ToXElement(i));
-                i++;
             }
 
             var requestDoc = new XDocument(element);
